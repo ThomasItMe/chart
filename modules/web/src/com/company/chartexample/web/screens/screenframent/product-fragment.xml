@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://schemas.haulmont.com/cuba/screen/fragment.xsd"
+          xmlns:charts="http://schemas.haulmont.com/charts/charts.xsd">
+    <data>
+        <collection id="countrySalesDc"
+                    class="com.company.chartexample.entity.Product"
+                    view="_local">
+        </collection>
+    </data>
+    <layout>
+        <vbox>
+            <vbox>
+                <buttonsPanel align="MIDDLE_RIGHT" width="20%">
+                    <button id="revolving" caption="revolving"/>
+                    <button id="termLoan" caption="termLoan"/>
+                </buttonsPanel>
+            </vbox>
+        <charts:serialChart id="serialChart"
+                            additionalFields="rowLabels"
+                            categoryField="category"
+                            dataContainer="countrySalesDc"
+                            height="500px"
+                            width="80%">
+            <charts:graphs>
+                <charts:graph id="saleGraph"
+                              fillAlphas="1"
+                              lineColor="BLACK"
+                              type="COLUMN"
+                              valueField="revolving">
+                    <charts:fillColors>
+                        <charts:color value="#0099FF"/>
+                    </charts:fillColors>
+                </charts:graph>
+                <charts:graph id="costGraph"
+                              fillAlphas="1"
+                              lineColor="BLACK"
+                              type="COLUMN"
+                              valueField="termLoan">
+                    <charts:fillColors>
+                        <charts:color value="#FF9900"/>
+                    </charts:fillColors>
+                </charts:graph>
+            </charts:graphs>
+            <charts:categoryAxis gridAlpha="0"
+                                 labelRotation="0"/>
+            <charts:export/>
+        </charts:serialChart>
+        </vbox>
+    </layout>
+</fragment>

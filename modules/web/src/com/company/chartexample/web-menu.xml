@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-chartexample" insertBefore="administration" caption="mainMsg://menu_config.application-chartexample">
+        <item screen="chartexample_PivotSampleScreen" caption="mainMsg://menu_config.chartexample_PivotSampleScreen"/>
+        <item screen="chartexample_Product.browse" caption="mainMsg://menu_config.chartexample_Product.browse"/>
+        <item screen="chartexample_Productscreen" caption="mainMsg://menu_config.chartexample_Productscreen"/>
+        <item screen="chartexample_UpdateColumnChart" caption="mainMsg://menu_config.chartexample_UpdateColumnChart"/>
+        <item screen="chartexample_IncomeExpenses.browse"
+              caption="mainMsg://menu_config.chartexample_IncomeExpenses.browse"/>
+        <item screen="chartexample_TwoLevelCategoryChart"
+              caption="mainMsg://menu_config.chartexample_TwoLevelCategoryChart"/>
+        <item screen="chartexample_CountrySales.browse"
+              caption="mainMsg://menu_config.chartexample_CountrySales.browse"/>
+        <item screen="chartexample_ProductChart" caption="mainMsg://menu_config.chartexample_ProductChart"/>
+        <item screen="chartexample_ProductScreen" caption="mainMsg://menu_config.chartexample_ProductScreen"/>
+    </menu>
+</menu-config>

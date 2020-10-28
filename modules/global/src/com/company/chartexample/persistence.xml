@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="chartExample" transaction-type="RESOURCE_LOCAL">
+
+        <class>com.company.chartexample.entity.PivotTable</class>
+        <class>com.company.chartexample.entity.Product</class>
+        <class>com.company.chartexample.entity.IncomeExpenses</class>
+        <class>com.company.chartexample.entity.CountrySales</class>
+    </persistence-unit>
+</persistence>

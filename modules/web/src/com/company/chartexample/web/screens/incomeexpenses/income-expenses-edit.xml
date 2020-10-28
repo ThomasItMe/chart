@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://incomeExpensesEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.chartexample.web.screens.incomeexpenses">
+    <data>
+        <instance id="incomeExpensesDc"
+                  class="com.company.chartexample.entity.IncomeExpenses">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="incomeExpensesDc">
+            <column width="350px">
+                <textField id="yearField" property="year"/>
+                <textField id="incomeField" property="income"/>
+                <textField id="expensesField" property="expenses"/>
+                <textField id="alphaField" property="alpha"/>
+                <textField id="dashLengthLineField" property="dashLengthLine"/>
+                <textField id="dashLengthColumnField" property="dashLengthColumn"/>
+                <textField id="additionalField" property="additional"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

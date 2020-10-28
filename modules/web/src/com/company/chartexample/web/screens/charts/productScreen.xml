@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://productscreen.caption"
+        messagesPack="com.company.chartexample.web.screens.charts"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd">
+    <data>
+        <collection id="tipsDc"
+                    class="com.company.chartexample.entity.Product"
+                    view="_local"/>
+    </data>
+    <layout>
+        <chart:pivotTable id="tipsPivotTableUI"
+                          autoSortUnusedProperties="true"
+                          dataContainer="tipsDc"
+                          editable="true">
+            <chart:properties>
+                <chart:property name="rowLabels" localizedName="rowLabels"/>
+                <chart:property name="revolving"/>
+                <chart:property name="termLoan"/>
+                <chart:property name="grandTotal"/>
+            </chart:properties>
+            <chart:hiddenProperties>
+                <chart:property name="row"/>
+            </chart:hiddenProperties>
+            <chart:aggregationProperties>
+                <chart:property name="revolving"/>
+                <chart:property name="termLoan"/>
+            </chart:aggregationProperties>
+            <chart:aggregations default="COUNT">
+                <chart:aggregation caption="Count"/>
+                <chart:aggregation mode="MAXIMUM"/>
+            </chart:aggregations>
+            <chart:renderers default="BAR_CHART"/>
+            <chart:rows>
+                <chart:row value="revolving"/>
+                <chart:row value="termLoan"/>
+            </chart:rows>
+            <chart:columns>
+                <chart:column value="rowLabels"/>
+            </chart:columns>
+
+        </chart:pivotTable>
+    </layout>
+</window>

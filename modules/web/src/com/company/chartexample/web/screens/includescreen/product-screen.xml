@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://productScreen.caption"
+        messagesPack="com.company.chartexample.web.screens.includescreen">
+    <layout>
+        <vbox id="addressBox" caption="Address">
+            <fragment screen="chartexample_ProductFragment" height="500px"/>
+        </vbox>
+    </layout>
+</window>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:chart="http://schemas.haulmont.com/charts/charts.xsd">
+    <data>
+        <collection id="incomeExpensesDc"
+                    class="com.company.chartexample.entity.IncomeExpenses"
+                    view="_local">
+            <loader id="incomeExpensesLoader">
+                <query>
+                    <![CDATA[select e from chartexample_IncomeExpenses e order by e.year]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout expand="columnChart" spacing="true">
+        <hbox spacing="true">
+            <button id="addIncome" caption="Add" />
+            <button id="removeIncome" caption="Remove" />
+        </hbox>
+        <chart:serialChart id="columnChart"
+                           additionalFields="year"
+                           addClassNames="true"
+                           autoMargins="false"
+                           categoryField="additional"
+                           dataContainer="incomeExpensesDc"
+                           marginBottom="26"
+                           marginLeft="30"
+                           marginRight="8"
+                           marginTop="10"
+                           startDuration="1"
+                           theme="LIGHT"
+                           width="100%">
+            <chart:valueAxes>
+                <chart:axis axisAlpha="0"
+                            position="LEFT"/>
+            </chart:valueAxes>
+            <chart:balloon adjustBorderColor="false"
+                           color="WHITE"
+                           horizontalPadding="10"
+                           verticalPadding="8"/>
+            <chart:graphs>
+                <chart:graph alphaField="alpha"
+                             balloonText="&lt;span style='font-size:12px;'&gt;[[title]] in [[category]]:&lt;br&gt;
+                             &lt;span style='font-size:20px;'&gt;[[value]]&lt;/span&gt; [[additional]]&lt;/span&gt;"
+                             dashLengthField="dashLengthColumn"
+                             fillAlphas="1"
+                             title="Income"
+                             type="COLUMN"
+                             valueField="income"/>
+            </chart:graphs>
+            <chart:categoryAxis axisAlpha="0"
+                                gridPosition="START"
+                                tickLength="0"/>
+            <chart:export/>
+        </chart:serialChart>
+    </layout>
+</window>
